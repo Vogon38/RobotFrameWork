@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230130 09:50:39.258" rpa="false" schemaversion="3">
+<suite id="s1" name="TestSuite" source="c:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestSuite.robot">
+<test id="s1-t1" name="Login User with Password" line="9">
+<kw name="Connect to Server">
+<msg timestamp="20230130 09:50:39.395" level="FAIL">No keyword with name 'Connect to Server' found.</msg>
+<status status="FAIL" starttime="20230130 09:50:39.394" endtime="20230130 09:50:39.402"/>
+</kw>
+<kw name="Login User">
+<arg>ironman</arg>
+<arg>1234567890</arg>
+<status status="NOT RUN" starttime="20230130 09:50:39.411" endtime="20230130 09:50:39.412"/>
+</kw>
+<kw name="Verify Valid Login">
+<arg>Tony Stark</arg>
+<status status="NOT RUN" starttime="20230130 09:50:39.420" endtime="20230130 09:50:39.420"/>
+</kw>
+<kw name="Close Server Connection" type="TEARDOWN">
+<msg timestamp="20230130 09:50:39.431" level="FAIL">No keyword with name 'Close Server Connection' found.</msg>
+<status status="FAIL" starttime="20230130 09:50:39.430" endtime="20230130 09:50:39.435">No keyword with name 'Close Server Connection' found.</status>
+</kw>
+<tag>positive</tag>
+<status status="FAIL" starttime="20230130 09:50:39.385" endtime="20230130 09:50:39.440">No keyword with name 'Connect to Server' found.
+
+Also teardown failed:
+No keyword with name 'Close Server Connection' found.</status>
+</test>
+<doc>A test suite for valid login.
+
+Keywords are imported from the resource file</doc>
+<status status="FAIL" starttime="20230130 09:50:39.283" endtime="20230130 09:50:39.451"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">positive</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestSuite">TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230130 09:50:39.363" level="ERROR">Error in file 'c:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestSuite.robot' on line 5: Resource file 'keywords.resource' does not exist.</msg>
+</errors>
+</robot>
