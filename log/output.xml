@@ -1,99 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230131 06:51:45.130" rpa="false" schemaversion="3">
-<suite id="s1" name="SpeedTest" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\SpeedTest.robot">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230131 07:19:11.607" rpa="false" schemaversion="3">
+<suite id="s1" name="TimeOutTest" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\TimeOutTest.robot">
 <test id="s1-t1" name="RegTest" line="5">
-<kw name="Get Selenium Speed" library="SeleniumLibrary">
-<var>${spead}</var>
-<doc>Gets the delay that is waited after each Selenium command.</doc>
-<msg timestamp="20230131 06:51:46.221" level="INFO">${spead} = 0 seconds</msg>
-<status status="PASS" starttime="20230131 06:51:46.220" endtime="20230131 06:51:46.226"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${spead}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 06:51:46.226" endtime="20230131 06:51:46.227"/>
-</kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://demowebshop.tricentis.com/register</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230131 06:51:46.230" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
-<status status="PASS" starttime="20230131 06:51:46.228" endtime="20230131 06:51:53.031"/>
+<msg timestamp="20230131 07:19:13.072" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/register'.</msg>
+<status status="PASS" starttime="20230131 07:19:13.070" endtime="20230131 07:19:21.219"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230131 06:51:53.032" endtime="20230131 06:51:53.609"/>
+<status status="PASS" starttime="20230131 07:19:21.220" endtime="20230131 07:19:21.390"/>
 </kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>2 seconds</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230131 06:51:53.610" endtime="20230131 06:51:53.612"/>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230131 07:19:21.390" endtime="20230131 07:19:21.402"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Registration</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20230131 07:19:31.635" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230131 07:19:31.636" level="FAIL">Text 'Registration' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20230131 07:19:21.403" endtime="20230131 07:19:31.661"/>
 </kw>
 <kw name="Select Radio Button" library="SeleniumLibrary">
 <arg>Gender</arg>
 <arg>M</arg>
 <doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20230131 06:51:53.613" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
-<status status="PASS" starttime="20230131 06:51:53.612" endtime="20230131 06:51:59.792"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.662" endtime="20230131 07:19:31.663"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:FirstName</arg>
 <arg>David</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230131 06:51:59.795" level="INFO">Typing text 'David' into text field 'name:FirstName'.</msg>
-<status status="PASS" starttime="20230131 06:51:59.793" endtime="20230131 06:52:06.052"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.663" endtime="20230131 07:19:31.664"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:LastName</arg>
 <arg>John</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230131 06:52:06.055" level="INFO">Typing text 'John' into text field 'name:LastName'.</msg>
-<status status="PASS" starttime="20230131 06:52:06.053" endtime="20230131 06:52:12.369"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.664" endtime="20230131 07:19:31.665"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:Email</arg>
 <arg>eg@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230131 06:52:12.372" level="INFO">Typing text 'eg@gmail.com' into text field 'name:Email'.</msg>
-<status status="PASS" starttime="20230131 06:52:12.370" endtime="20230131 06:52:18.631"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.666" endtime="20230131 07:19:31.666"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:Password</arg>
 <arg>davidjohn</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230131 06:52:18.635" level="INFO">Typing text 'davidjohn' into text field 'name:Password'.</msg>
-<status status="PASS" starttime="20230131 06:52:18.632" endtime="20230131 06:52:24.865"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.667" endtime="20230131 07:19:31.668"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>name:ConfirmPassword</arg>
 <arg>davidjohn</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230131 06:52:24.867" level="INFO">Typing text 'davidjohn' into text field 'name:ConfirmPassword'.</msg>
-<status status="PASS" starttime="20230131 06:52:24.866" endtime="20230131 06:52:31.088"/>
+<status status="NOT RUN" starttime="20230131 07:19:31.668" endtime="20230131 07:19:31.668"/>
 </kw>
-<kw name="Get Selenium Speed" library="SeleniumLibrary">
-<var>${spead}</var>
-<doc>Gets the delay that is waited after each Selenium command.</doc>
-<msg timestamp="20230131 06:52:31.089" level="INFO">${spead} = 2 seconds</msg>
-<status status="PASS" starttime="20230131 06:52:31.088" endtime="20230131 06:52:31.089"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${spead}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230131 06:52:31.090" endtime="20230131 06:52:31.091"/>
-</kw>
-<status status="PASS" starttime="20230131 06:51:46.216" endtime="20230131 06:52:31.092"/>
+<status status="FAIL" starttime="20230131 07:19:13.067" endtime="20230131 07:19:31.669">Text 'Registration' did not appear in 10 seconds.</status>
 </test>
-<status status="PASS" starttime="20230131 06:51:45.148" endtime="20230131 06:52:31.094"/>
+<status status="FAIL" starttime="20230131 07:19:11.682" endtime="20230131 07:19:31.671"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="SpeedTest">SpeedTest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TimeOutTest">TimeOutTest</stat>
 </suite>
 </statistics>
 <errors>
