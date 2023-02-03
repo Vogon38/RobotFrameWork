@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230201 17:04:54.416" rpa="false" schemaversion="3">
-<suite id="s1" name="MouseOperations" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\MouseOperations.robot">
-<test id="s1-t1" name="MouseActions" line="5">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230203 16:39:02.126" rpa="false" schemaversion="3">
+<suite id="s1" name="ScrollingThePage" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\ScrollingThePage.robot">
+<test id="s1-t1" name="ScrollingTest" line="5">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>http://swisnl.github.io/jQuery-contextMenu/demo.html</arg>
+<arg>https://www.countries-ofthe-world.com/flags-of-the-world.html</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230201 17:04:55.935" level="INFO">Opening browser 'chrome' to base url 'http://swisnl.github.io/jQuery-contextMenu/demo.html'.</msg>
-<status status="PASS" starttime="20230201 17:04:55.932" endtime="20230201 17:05:03.573"/>
+<msg timestamp="20230203 16:39:04.071" level="INFO">Opening browser 'chrome' to base url 'https://www.countries-ofthe-world.com/flags-of-the-world.html'.</msg>
+<status status="PASS" starttime="20230203 16:39:04.069" endtime="20230203 16:39:09.375"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230201 17:05:03.574" endtime="20230201 17:05:03.767"/>
+<status status="PASS" starttime="20230203 16:39:09.375" endtime="20230203 16:39:09.592"/>
 </kw>
-<kw name="Open Context Menu" library="SeleniumLibrary">
-<arg>xpath://span[@class='context-menu-one btn btn-neutral']</arg>
-<doc>Opens the context menu on the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230201 17:05:03.768" endtime="20230201 17:05:04.308"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, -document.body.scroll)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230203 16:39:09.595" level="INFO">Executing JavaScript:
+window.scrollTo(0, -document.body.scroll)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230203 16:39:09.593" endtime="20230203 16:39:09.635"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230201 17:05:07.311" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230201 17:05:04.309" endtime="20230201 17:05:07.311"/>
-</kw>
-<status status="PASS" starttime="20230201 17:04:55.929" endtime="20230201 17:05:07.312"/>
+<status status="PASS" starttime="20230203 16:39:04.060" endtime="20230203 16:39:09.635"/>
 </test>
-<status status="PASS" starttime="20230201 17:04:54.439" endtime="20230201 17:05:07.313"/>
+<status status="PASS" starttime="20230203 16:39:02.155" endtime="20230203 16:39:09.637"/>
 </suite>
 <statistics>
 <total>
@@ -35,7 +32,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="MouseOperations">MouseOperations</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="ScrollingThePage">ScrollingThePage</stat>
 </suite>
 </statistics>
 <errors>
