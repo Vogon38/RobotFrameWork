@@ -1,54 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230213 21:51:21.443" rpa="false" schemaversion="3">
-<suite id="s1" name="DBTesting" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\DBTesting.robot">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>pymysql</arg>
-<arg>${DBName}</arg>
-<arg>${DBUser}</arg>
-<arg>${DBPassword}</arg>
-<arg>${DBHost}</arg>
-<arg>${DBPort}</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20230213 21:51:21.612" level="INFO">Connecting using : pymysql.connect(db=mysql, user=root, passwd=root, host=localhost, port=5436, charset=None) </msg>
-<status status="PASS" starttime="20230213 21:51:21.569" endtime="20230213 21:51:21.630"/>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230213 22:05:49.410" rpa="false" schemaversion="3">
+<suite id="s1" name="SetupAndTearDown" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\SetupAndTearDown.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Opening browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.618" endtime="20230213 22:05:49.621"/>
 </kw>
-<test id="s1-t1" name="DeleteRecordsFromPersonTable" line="55">
-<kw name="Execute Sql String" library="DatabaseLibrary">
-<var>${output}</var>
-<arg>delete from mysql.person;</arg>
-<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
-True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20230213 21:51:21.633" level="INFO">Executing : Execute SQL String  |  delete from mysql.person; </msg>
-<msg timestamp="20230213 21:51:21.641" level="INFO">${output} = None</msg>
-<status status="PASS" starttime="20230213 21:51:21.632" endtime="20230213 21:51:21.641"/>
+<test id="s1-t1" name="TC1 Prepaid Recharge" line="10">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Login to application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.625" endtime="20230213 22:05:49.631"/>
 </kw>
-<kw name="Should Be Equal As Strings" library="BuiltIn">
-<arg>${output}</arg>
-<arg>None</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20230213 21:51:21.643" level="INFO">Argument types are:
-&lt;class 'NoneType'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20230213 21:51:21.642" endtime="20230213 21:51:21.644"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>This is prepaid recharge testcase</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.638" endtime="20230213 22:05:49.644"/>
 </kw>
-<status status="PASS" starttime="20230213 21:51:21.631" endtime="20230213 21:51:21.644"/>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Logout from application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.645" endtime="20230213 22:05:49.646"/>
+</kw>
+<status status="PASS" starttime="20230213 22:05:49.622" endtime="20230213 22:05:49.647"/>
 </test>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20230213 21:51:21.646" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20230213 21:51:21.646" endtime="20230213 21:51:21.647"/>
+<test id="s1-t2" name="TC2 Postpaid Recharge" line="13">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Login to application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.650" endtime="20230213 22:05:49.651"/>
 </kw>
-<status status="PASS" starttime="20230213 21:51:21.450" endtime="20230213 21:51:21.647"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>This is postpaid recharge testcase</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.651" endtime="20230213 22:05:49.652"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Logout from application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.653" endtime="20230213 22:05:49.653"/>
+</kw>
+<status status="PASS" starttime="20230213 22:05:49.648" endtime="20230213 22:05:49.654"/>
+</test>
+<test id="s1-t3" name="TC3 Search" line="16">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Login to application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.656" endtime="20230213 22:05:49.657"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>This is search test case</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.658" endtime="20230213 22:05:49.659"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Logout from application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.660" endtime="20230213 22:05:49.663"/>
+</kw>
+<status status="PASS" starttime="20230213 22:05:49.654" endtime="20230213 22:05:49.663"/>
+</test>
+<test id="s1-t4" name="TC4 Advanced Search" line="19">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Login to application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.665" endtime="20230213 22:05:49.666"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>This is advanced search test case</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.666" endtime="20230213 22:05:49.667"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Logout from application</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.668" endtime="20230213 22:05:49.669"/>
+</kw>
+<status status="PASS" starttime="20230213 22:05:49.664" endtime="20230213 22:05:49.670"/>
+</test>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Closing browser</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230213 22:05:49.672" endtime="20230213 22:05:49.673"/>
+</kw>
+<status status="PASS" starttime="20230213 22:05:49.429" endtime="20230213 22:05:49.673"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="DBTesting">DBTesting</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="SetupAndTearDown">SetupAndTearDown</stat>
 </suite>
 </statistics>
 <errors>
