@@ -1,98 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230213 22:05:49.410" rpa="false" schemaversion="3">
-<suite id="s1" name="SetupAndTearDown" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\SetupAndTearDown.robot">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>Opening browser</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.618" endtime="20230213 22:05:49.621"/>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230215 01:01:18.998" rpa="false" schemaversion="3">
+<suite id="s1" name="LoginTest" source="C:\Users\lua-b\OneDrive\Área de Trabalho\Robot\TestCases\LoginTest.robot">
+<test id="s1-t1" name="Login" line="12">
+<kw name="Open my browser" library="Login_Keywords">
+<arg>${siteUrl}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${siteUrl}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230215 01:01:19.442" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com'.</msg>
+<status status="PASS" starttime="20230215 01:01:19.441" endtime="20230215 01:01:23.293"/>
 </kw>
-<test id="s1-t1" name="TC1 Prepaid Recharge" line="10">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>Login to application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.625" endtime="20230213 22:05:49.631"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230215 01:01:23.294" endtime="20230215 01:01:23.421"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>This is prepaid recharge testcase</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.638" endtime="20230213 22:05:49.644"/>
+<status status="PASS" starttime="20230215 01:01:19.440" endtime="20230215 01:01:23.422"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
-<arg>Logout from application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.645" endtime="20230213 22:05:49.646"/>
+<kw name="Click login in" library="Login_Keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${loginIn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230215 01:01:23.426" level="INFO">Clicking element 'xpath=//*[@id='login2']'.</msg>
+<status status="PASS" starttime="20230215 01:01:23.424" endtime="20230215 01:01:23.602"/>
 </kw>
-<status status="PASS" starttime="20230213 22:05:49.622" endtime="20230213 22:05:49.647"/>
+<status status="PASS" starttime="20230215 01:01:23.422" endtime="20230215 01:01:23.603"/>
+</kw>
+<kw name="Enter username" library="Login_Keywords">
+<arg>${user}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_loginUsername}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230215 01:01:23.606" level="INFO">Typing text 'tutorial' into text field 'xpath://*[@id='loginusername']'.</msg>
+<status status="PASS" starttime="20230215 01:01:23.605" endtime="20230215 01:01:24.440"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:23.603" endtime="20230215 01:01:24.440"/>
+</kw>
+<kw name="Enter password" library="Login_Keywords">
+<arg>${pwd}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_loginPassword}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230215 01:01:24.445" level="INFO">Typing text 'tutorial' into text field '//*[@id='loginpassword']'.</msg>
+<status status="PASS" starttime="20230215 01:01:24.442" endtime="20230215 01:01:24.775"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:24.441" endtime="20230215 01:01:24.775"/>
+</kw>
+<kw name="Click sign in" library="Login_Keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_signIn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230215 01:01:24.779" level="INFO">Clicking button 'xpath=//button[contains(.,'Log in')]'.</msg>
+<status status="PASS" starttime="20230215 01:01:24.777" endtime="20230215 01:01:24.894"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:24.776" endtime="20230215 01:01:24.895"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<arg>seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230215 01:01:27.897" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20230215 01:01:27.897" level="INFO">seconds</msg>
+<status status="PASS" starttime="20230215 01:01:24.895" endtime="20230215 01:01:27.897"/>
+</kw>
+<kw name="Verify successful login" library="Login_Keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txt_nameofuser}</var>
+<arg>${nameofuser}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230215 01:01:27.949" level="INFO">${txt_nameofuser} = Welcome tutorial</msg>
+<status status="PASS" starttime="20230215 01:01:27.897" endtime="20230215 01:01:27.949"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${txt_nameofuser}</arg>
+<arg>Welcome tutorial</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230215 01:01:27.949" endtime="20230215 01:01:27.950"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:27.897" endtime="20230215 01:01:27.950"/>
+</kw>
+<kw name="Close my browser" library="Login_Keywords">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230215 01:01:27.951" endtime="20230215 01:01:34.314"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:27.950" endtime="20230215 01:01:34.314"/>
+</kw>
+<status status="PASS" starttime="20230215 01:01:19.439" endtime="20230215 01:01:34.315"/>
 </test>
-<test id="s1-t2" name="TC2 Postpaid Recharge" line="13">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>Login to application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.650" endtime="20230213 22:05:49.651"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>This is postpaid recharge testcase</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.651" endtime="20230213 22:05:49.652"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
-<arg>Logout from application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.653" endtime="20230213 22:05:49.653"/>
-</kw>
-<status status="PASS" starttime="20230213 22:05:49.648" endtime="20230213 22:05:49.654"/>
-</test>
-<test id="s1-t3" name="TC3 Search" line="16">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>Login to application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.656" endtime="20230213 22:05:49.657"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>This is search test case</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.658" endtime="20230213 22:05:49.659"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
-<arg>Logout from application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.660" endtime="20230213 22:05:49.663"/>
-</kw>
-<status status="PASS" starttime="20230213 22:05:49.654" endtime="20230213 22:05:49.663"/>
-</test>
-<test id="s1-t4" name="TC4 Advanced Search" line="19">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>Login to application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.665" endtime="20230213 22:05:49.666"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>This is advanced search test case</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.666" endtime="20230213 22:05:49.667"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
-<arg>Logout from application</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.668" endtime="20230213 22:05:49.669"/>
-</kw>
-<status status="PASS" starttime="20230213 22:05:49.664" endtime="20230213 22:05:49.670"/>
-</test>
-<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
-<arg>Closing browser</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230213 22:05:49.672" endtime="20230213 22:05:49.673"/>
-</kw>
-<status status="PASS" starttime="20230213 22:05:49.429" endtime="20230213 22:05:49.673"/>
+<status status="PASS" starttime="20230215 01:01:19.002" endtime="20230215 01:01:34.316"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="SetupAndTearDown">SetupAndTearDown</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="LoginTest">LoginTest</stat>
 </suite>
 </statistics>
 <errors>
